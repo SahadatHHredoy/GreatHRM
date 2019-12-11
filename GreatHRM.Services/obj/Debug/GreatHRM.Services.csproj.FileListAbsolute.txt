@@ -1,0 +1,5 @@
+D:\Projects\GreatHRM\GreatHRM.Services\bin\Debug\GreatHRM.Services.dll
+D:\Projects\GreatHRM\GreatHRM.Services\bin\Debug\GreatHRM.Services.pdb
+D:\Projects\GreatHRM\GreatHRM.Services\obj\Debug\GreatHRM.Services.csprojAssemblyReference.cache
+D:\Projects\GreatHRM\GreatHRM.Services\obj\Debug\GreatHRM.Services.dll
+D:\Projects\GreatHRM\GreatHRM.Services\obj\Debug\GreatHRM.Services.pdb
