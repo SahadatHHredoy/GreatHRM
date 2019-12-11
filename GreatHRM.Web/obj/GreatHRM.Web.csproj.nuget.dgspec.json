@@ -78,6 +78,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "BundlerMinifier.Core": {
+              "target": "Package",
+              "version": "[3.2.435, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.0.0, )"

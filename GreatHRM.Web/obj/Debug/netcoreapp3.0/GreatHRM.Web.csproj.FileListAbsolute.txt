@@ -45,10 +45,8 @@ D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.TagHelper
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.TagHelpers.output.cache
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.RazorCoreGenerate.cache
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
-D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.RazorTargetAssemblyInfo.cache
@@ -85,4 +83,9 @@ D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\GreatHRM.Entities.pdb
 D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\GreatHRM.Entities.dll.config
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.csproj.CopyComplete
 D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_headerPartial.cshtml.g.cs
+D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_sidebarPartial.cshtml.g.cs
+D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\dotnet-bundle.dll
+D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\Projects\GreatHRM\GreatHRM.Web\bin\Debug\netcoreapp3.0\NUglify.dll
 D:\Projects\GreatHRM\GreatHRM.Web\obj\Debug\netcoreapp3.0\GreatHRM.Web.MvcApplicationPartsAssemblyInfo.cache
