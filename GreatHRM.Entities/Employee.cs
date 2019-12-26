@@ -48,7 +48,7 @@ namespace GreatHRM.Entities
         [ForeignKey("ShiftId")]
         public virtual Shift Shift { get; set; }
 
-        public DateTime JoiningDate { get; set; }
+        public DateTime? JoiningDate { get; set; }
         public bool IsAutoShift { get; set; }
 
         public DayOfWeek FirstWeeklyOff { get; set; }
@@ -57,10 +57,10 @@ namespace GreatHRM.Entities
         public byte SecondWOType { get; set; }
         public string HalfDayShift { get; set; }
 
-        public int WeekTimeZone1 { get; set; }
-        public int WeekTimeZone2 { get; set; }
-        public int WeekTimeZone3 { get; set; }
-        public int WeekTimeZone4 { get; set; }
+        public int? WeekTimeZone1 { get; set; }
+        public int? WeekTimeZone2 { get; set; }
+        public int? WeekTimeZone3 { get; set; }
+        public int? WeekTimeZone4 { get; set; }
         public DateTime? ValidityStart { get; set; }
         public DateTime? ValidityEnd { get; set; }
 

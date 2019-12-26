@@ -1,0 +1,51 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Employee>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Employee List</h3>
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Employee")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().EmployeeCode)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().EmployeeName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FatherName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CompanyId)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().DepartmentId)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().DesignationId)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().EnrollNo)</th>
+                    </tr>
+                    @foreach (var employee in Model)
+                    {
+
+                        string img = employee.ImageFile ?? "/img/no-image.jpg";
+                        <tr>
+                            <td><img src="@img" height="50" width="50" /></td>
+                            <td>@Html.DisplayFor(model => employee.EmployeeCode)</td>
+                            <td>@Html.DisplayFor(model => employee.EmployeeName)</td>
+                            <td>@Html.DisplayFor(model => employee.FatherName)</td>
+                            <td>@Html.DisplayFor(model => employee.Company.CompanyName)</td>
+                            <td>@Html.DisplayFor(model => employee.Department.DepartmentName)</td>
+                            <td>@Html.DisplayFor(model => employee.Designation.DesignationName)</td>
+                            <td>@Html.DisplayFor(model => employee.EnrollNo)</td>
+
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

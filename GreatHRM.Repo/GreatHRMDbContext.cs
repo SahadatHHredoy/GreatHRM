@@ -28,5 +28,7 @@ namespace GreatHRM.Repo
         public DbSet<Holiday> Holidays { get; set; }
         public DbSet<LeaveType> LeaveTypes { get; set; }
         public DbSet<HolidayEmployee> HolidayEmployees { get; set; }
+        public DbSet<Machine> Machines { get; set; }
+        public DbSet<Log> Logs { get; set; }
     }
 }

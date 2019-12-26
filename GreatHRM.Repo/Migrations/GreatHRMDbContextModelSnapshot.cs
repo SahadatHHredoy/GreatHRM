@@ -208,7 +208,7 @@ namespace GreatHRM.Repo.Migrations
 
                     b.Property<bool>("IsAutoShift");
 
-                    b.Property<DateTime>("JoiningDate");
+                    b.Property<DateTime?>("JoiningDate");
 
                     b.Property<string>("MobileNo");
 
@@ -238,13 +238,13 @@ namespace GreatHRM.Repo.Migrations
 
                     b.Property<DateTime?>("ValidityStart");
 
-                    b.Property<int>("WeekTimeZone1");
+                    b.Property<int?>("WeekTimeZone1");
 
-                    b.Property<int>("WeekTimeZone2");
+                    b.Property<int?>("WeekTimeZone2");
 
-                    b.Property<int>("WeekTimeZone3");
+                    b.Property<int?>("WeekTimeZone3");
 
-                    b.Property<int>("WeekTimeZone4");
+                    b.Property<int?>("WeekTimeZone4");
 
                     b.HasKey("Id");
 
@@ -349,6 +349,74 @@ namespace GreatHRM.Repo.Migrations
                     b.HasIndex("UpdatedBy");
 
                     b.ToTable("LeaveTypes");
+                });
+
+            modelBuilder.Entity("GreatHRM.Entities.Log", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.Property<int>("EnrollId");
+
+                    b.Property<byte>("Event");
+
+                    b.Property<byte>("InOut");
+
+                    b.Property<int>("MachineId");
+
+                    b.Property<byte>("Mode");
+
+                    b.Property<byte?>("Status");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MachineId");
+
+                    b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("GreatHRM.Entities.Machine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte>("AccessType");
+
+                    b.Property<int>("BranchId");
+
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<int?>("CreatedBy");
+
+                    b.Property<string>("MachineName");
+
+                    b.Property<int>("MachineNo");
+
+                    b.Property<byte>("MachineType");
+
+                    b.Property<int>("PortNo");
+
+                    b.Property<string>("SerialNo");
+
+                    b.Property<byte?>("Status");
+
+                    b.Property<int?>("TimeZone");
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<int?>("UpdatedBy");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("UpdatedBy");
+
+                    b.ToTable("Machines");
                 });
 
             modelBuilder.Entity("GreatHRM.Entities.OfficeTimePolicy", b =>
@@ -527,12 +595,18 @@ namespace GreatHRM.Repo.Migrations
                     b.Property<string>("Email")
                         .IsRequired();
 
+                    b.Property<string>("ImageFile");
+
                     b.Property<string>("Mobile");
 
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<int>("RoleId");
+
                     b.Property<byte?>("Status");
+
+                    b.Property<bool>("SupUser");
 
                     b.Property<DateTime?>("UpdatedAt");
 
@@ -541,11 +615,9 @@ namespace GreatHRM.Repo.Migrations
                     b.Property<string>("UserName")
                         .IsRequired();
 
-                    b.Property<int?>("UserRoleId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserRoleId");
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -555,25 +627,13 @@ namespace GreatHRM.Repo.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("CreatedAt");
-
-                    b.Property<int?>("CreatedBy");
-
                     b.Property<string>("RoleName")
                         .IsRequired()
                         .HasMaxLength(1000);
 
                     b.Property<byte?>("Status");
 
-                    b.Property<DateTime?>("UpdatedAt");
-
-                    b.Property<int?>("UpdatedBy");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("UserRoles");
                 });
@@ -717,6 +777,30 @@ namespace GreatHRM.Repo.Migrations
                         .HasForeignKey("UpdatedBy");
                 });
 
+            modelBuilder.Entity("GreatHRM.Entities.Log", b =>
+                {
+                    b.HasOne("GreatHRM.Entities.Machine", "Machine")
+                        .WithMany()
+                        .HasForeignKey("MachineId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GreatHRM.Entities.Machine", b =>
+                {
+                    b.HasOne("GreatHRM.Entities.Branch", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GreatHRM.Entities.User", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("GreatHRM.Entities.User", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
             modelBuilder.Entity("GreatHRM.Entities.OfficeTimePolicy", b =>
                 {
                     b.HasOne("GreatHRM.Entities.User", "CreatedByUser")
@@ -752,20 +836,10 @@ namespace GreatHRM.Repo.Migrations
 
             modelBuilder.Entity("GreatHRM.Entities.User", b =>
                 {
-                    b.HasOne("GreatHRM.Entities.UserRole")
+                    b.HasOne("GreatHRM.Entities.UserRole", "UserRole")
                         .WithMany("Users")
-                        .HasForeignKey("UserRoleId");
-                });
-
-            modelBuilder.Entity("GreatHRM.Entities.UserRole", b =>
-                {
-                    b.HasOne("GreatHRM.Entities.User", "CreatedByUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("GreatHRM.Entities.User", "UpdatedByUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("GreatHRM.Entities.UserRolePermission", b =>

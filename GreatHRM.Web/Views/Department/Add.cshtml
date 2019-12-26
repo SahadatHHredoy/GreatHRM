@@ -1,0 +1,46 @@
+﻿@using GreatHRM.Entities
+@model GreatHRM.Entities.Department
+@using (Html.BeginForm("Add", "Department", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Department Add</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DepartmentName, new { @class = "col-md-5 control-label" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.DepartmentName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DepartmentName)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.HeadEmail, new { @class = "col-md-5 control-label" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.HeadEmail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.HeadEmail)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index", "Company")" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
+        </div>
+    </div>
+}
+
+

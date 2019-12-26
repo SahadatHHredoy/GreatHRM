@@ -1,0 +1,180 @@
+﻿@using GreatHRM.Entities
+@model GreatHRM.Entities.Shift
+@using (Html.BeginForm("Add", "Shift", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Shfit Add</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <fieldset class="row row-bordered">
+                <legend class="sectionLedgend">Basic</legend>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ShiftCode, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.ShiftCode, new { @class = "form-control input-sm" })
+                            @Html.ValidationMessageFor(model => model.ShiftCode)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StartTime, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.StartTime, new { @class = "form-control input-sm time" })
+                            @Html.ValidationMessageFor(model => model.StartTime)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Duration, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.Duration, new { @class = "form-control time" })
+                            @Html.ValidationMessageFor(model => model.Duration)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ShiftName, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.ShiftName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ShiftName)
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.EndTime, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.EndTime, new { @class = "form-control time" })
+                            @Html.ValidationMessageFor(model => model.EndTime)
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.ShiftDetail, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextAreaFor(model => model.ShiftDetail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ShiftDetail)
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="row row-bordered">
+                <legend class="sectionLedgend">Break</legend>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break1Begin, new { @class = "" })
+
+                        @Html.TextBoxFor(model => model.Break1Begin, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break1Begin)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break2Begin, new { @class = "" })
+
+                        @Html.TextBoxFor(model => model.Break2Begin, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break2Begin)
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break1End, new { @class = "" })
+                        @Html.TextBoxFor(model => model.Break1End, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break1End)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break2End, new { @class = "" })
+                        @Html.TextBoxFor(model => model.Break2End, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break2End)
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break1Duration, new { @class = "" })
+                        @Html.TextBoxFor(model => model.Break1Duration, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break1Duration)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Break2Duration, new { @class = "" })
+                        @Html.TextBoxFor(model => model.Break2Duration, new { @class = "form-control input-sm time" })
+                        @Html.ValidationMessageFor(model => model.Break2Duration)
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset class="row row-bordered">
+                <legend class="sectionLedgend">Others</legend>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NoOfPresentForWeekend, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.NoOfPresentForWeekend, new { @class = "form-control input-sm" })
+                            @Html.ValidationMessageFor(model => model.NoOfPresentForWeekend)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RemoveDuplicatePunch, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.RemoveDuplicatePunch, new { @class = "form-control input-sm time" })
+                            @Html.ValidationMessageFor(model => model.RemoveDuplicatePunch)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaxEarlyHourAllow, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.MaxEarlyHourAllow, new { @class = "form-control time" })
+                            @Html.ValidationMessageFor(model => model.MaxEarlyHourAllow)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaxOTAllow, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.MaxOTAllow, new { @class = "form-control time" })
+                            @Html.ValidationMessageFor(model => model.MaxOTAllow)
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.FirstWeeklyOff, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+
+                            @Html.TextBoxFor(model => model.FirstWeeklyOff, new { @class = "form-control", @type = "week" })
+                            @Html.ValidationMessageFor(model => model.FirstWeeklyOff)
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.SecondWeeklyOff, new { @class = "col-md-5" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.SecondWeeklyOff, new { @class = "form-control", @type = "week" })
+                            @Html.ValidationMessageFor(model => model.SecondWeeklyOff)
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index", "Shfit")" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/jquery.inputmask.js"></script>
+
+    <script src="~/Scripts/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask.extensions.js"></script>
+    <script>
+
+        $('.time').inputmask({ "mask": "99:99" })
+        $('[data-mask]').inputmask({ "mask": "99:99" })
+
+    </script>
+}
+
+

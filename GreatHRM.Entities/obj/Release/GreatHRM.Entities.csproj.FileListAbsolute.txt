@@ -1,0 +1,11 @@
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\GreatHRM.Entities.dll.config
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\GreatHRM.Entities.dll
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\GreatHRM.Entities.pdb
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\EntityFramework.dll
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\EntityFramework.SqlServer.dll
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\EntityFramework.xml
+D:\Projects\GreatHRM\GreatHRM.Entities\bin\Release\EntityFramework.SqlServer.xml
+D:\Projects\GreatHRM\GreatHRM.Entities\obj\Release\GreatHRM.Entities.csprojAssemblyReference.cache
+D:\Projects\GreatHRM\GreatHRM.Entities\obj\Release\GreatHRM.Entities.csproj.CopyComplete
+D:\Projects\GreatHRM\GreatHRM.Entities\obj\Release\GreatHRM.Entities.dll
+D:\Projects\GreatHRM\GreatHRM.Entities\obj\Release\GreatHRM.Entities.pdb

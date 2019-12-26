@@ -1,0 +1,40 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Company>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"></h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Company")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CompanyName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Address)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PhoneNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Email)</th>
+
+                    </tr>
+                    @foreach (var company in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => company.CompanyName)</td>
+                            <td>@Html.DisplayFor(model => company.Address)</td>
+                            <td>@Html.DisplayFor(model => company.PhoneNo)</td>
+                            <td>@Html.DisplayFor(model => company.Email)</td>
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

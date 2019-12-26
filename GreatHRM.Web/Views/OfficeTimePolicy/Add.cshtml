@@ -1,0 +1,133 @@
+﻿@using GreatHRM.Entities
+@model GreatHRM.Entities.OfficeTimePolicy
+@using (Html.BeginForm("Add", "OfficeTimePolicy", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Office Time Policy Add</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PolicyName, new { @class = "" })
+                    @Html.TextBoxFor(model => model.PolicyName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PolicyName)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PermitedEarlyDeparture, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.PermitedEarlyDeparture, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.PermitedEarlyDeparture)
+
+                </div>
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.PermittedLateArrival, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.PermittedLateArrival, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.PermittedLateArrival)
+
+                </div>
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.NumberOfLate, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.NumberOfLate, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NumberOfLate)
+
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LateArrival, new { @class = "" })
+                    @Html.TextBoxFor(model => model.LateArrival, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.LateArrival)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EarlyDeparture, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.EarlyDeparture, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.EarlyDeparture)
+
+                </div>
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.SinglePunch, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.SinglePunch, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SinglePunch)
+
+                </div>
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.CutDays, new { @class = "" })
+
+                    @Html.TextBoxFor(model => model.CutDays, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CutDays)
+
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.HalfDayLess, new { @class = "" })
+                    @Html.TextBoxFor(model => model.HalfDayLess, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.HalfDayLess)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AbsentLess, new { @class = "" })
+                    @Html.TextBoxFor(model => model.AbsentLess, new { @class = "form-control time" })
+                    @Html.ValidationMessageFor(model => model.AbsentLess)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShowAsLate, new { @class = "" })
+                    @Html.TextBoxFor(model => model.ShowAsLate, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ShowAsLate)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ShowAsEarly, new { @class = "" })
+                    @Html.TextBoxFor(model => model.ShowAsEarly, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ShowAsEarly)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RequirePunches, new { @class = "" })
+                    @Html.TextBoxFor(model => model.RequirePunches, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RequirePunches)
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index", "OfficeTimePolicy")" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/jquery.inputmask.js"></script>
+
+    <script src="~/Scripts/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/Scripts/jquery.inputmask.extensions.js"></script>
+    <script>
+
+        $('.time').inputmask({ "mask": "99:99" })
+        $('[data-mask]').inputmask({ "mask": "99:99" })
+
+    </script>
+}
+
+

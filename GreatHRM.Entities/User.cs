@@ -33,5 +33,11 @@ namespace GreatHRM.Entities
         public new int? UpdatedBy { get; set; }
         [NotMapped]
         public new int? UpdatedByUser { get; set; }
+
+        public int RoleId { get; set; }
+        [ForeignKey("RoleId")]
+        public virtual UserRole UserRole { get; set; }
+        public bool SupUser { get; set; }
+        public string ImageFile { get; set; }
     }
 }

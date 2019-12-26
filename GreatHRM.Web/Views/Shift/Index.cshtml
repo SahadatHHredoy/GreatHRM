@@ -1,0 +1,42 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Shift>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Shift List</h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Shift")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().ShiftName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().ShiftCode)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().StartTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().EndTime)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Duration)</th>
+
+                    </tr>
+                    @foreach (var shift in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => shift.ShiftName)</td>
+                            <td>@Html.DisplayFor(model => shift.ShiftCode)</td>
+                            <td>@Html.DisplayFor(model => shift.StartTime)</td>
+                            <td>@Html.DisplayFor(model => shift.EndTime)</td>
+                            <td>@Html.DisplayFor(model => shift.Duration)</td>
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

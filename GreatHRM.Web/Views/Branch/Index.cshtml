@@ -1,0 +1,42 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Branch>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Branch List</h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Branch")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().CompanyId)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().BranchName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Address)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PhoneNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Email)</th>
+
+                    </tr>
+                    @foreach (var branch in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => branch.Company.CompanyName)</td>
+                            <td>@Html.DisplayFor(model => branch.BranchName)</td>
+                            <td>@Html.DisplayFor(model => branch.Address)</td>
+                            <td>@Html.DisplayFor(model => branch.PhoneNo)</td>
+                            <td>@Html.DisplayFor(model => branch.Email)</td>
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
