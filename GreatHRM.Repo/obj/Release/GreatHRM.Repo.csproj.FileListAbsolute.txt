@@ -158,3 +158,7 @@ D:\Projects\GreatHRM\GreatHRM.Repo\obj\Release\GreatHRM.Repo.csprojAssemblyRefer
 D:\Projects\GreatHRM\GreatHRM.Repo\obj\Release\GreatHRM.Repo.csproj.CopyComplete
 D:\Projects\GreatHRM\GreatHRM.Repo\obj\Release\GreatHRM.Repo.dll
 D:\Projects\GreatHRM\GreatHRM.Repo\obj\Release\GreatHRM.Repo.pdb
+D:\Projects\GreatHRM\GreatHRM.Repo\bin\Release\log4net.dll
+D:\Projects\GreatHRM\GreatHRM.Repo\bin\Release\Newtonsoft.Json.dll
+D:\Projects\GreatHRM\GreatHRM.Repo\bin\Release\log4net.xml
+D:\Projects\GreatHRM\GreatHRM.Repo\bin\Release\Newtonsoft.Json.xml

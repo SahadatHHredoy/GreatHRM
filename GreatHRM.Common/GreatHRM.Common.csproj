@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\User\.nuget\packages\newtonsoft.json\10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Json\JsonBinderWithoutAssembly.cs" />
-    <Compile Include="Json\PrimitiveJsonConverter.cs" />
-    <Compile Include="Networking\InvocationDescriptor.cs" />
-    <Compile Include="Networking\InvocationResult.cs" />
-    <Compile Include="Networking\Message.cs" />
-    <Compile Include="Networking\RemoteException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strategies\ControllerMethodInvocationStrategy.cs" />
-    <Compile Include="Strategies\DecoratedControllerMethodInvocationStrategy.cs" />
-    <Compile Include="Strategies\MethodInvocationStrategy.cs" />
-    <Compile Include="Strategies\StringMethodInvocationStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

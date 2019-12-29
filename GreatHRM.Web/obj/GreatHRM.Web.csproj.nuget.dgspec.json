@@ -4,6 +4,17 @@
     "D:\\Projects\\GreatHRM\\GreatHRM.Web\\GreatHRM.Web.csproj": {}
   },
   "projects": {
+    "D:\\Projects\\GreatHRM\\GreatHRM.Common\\GreatHRM.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\GreatHRM\\GreatHRM.Common\\GreatHRM.Common.csproj",
+        "projectName": "GreatHRM.Common",
+        "projectPath": "D:\\Projects\\GreatHRM\\GreatHRM.Common\\GreatHRM.Common.csproj"
+      },
+      "frameworks": {
+        "net47": {}
+      }
+    },
     "D:\\Projects\\GreatHRM\\GreatHRM.Entities\\GreatHRM.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -63,6 +74,9 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
+              "D:\\Projects\\GreatHRM\\GreatHRM.Common\\GreatHRM.Common.csproj": {
+                "projectPath": "D:\\Projects\\GreatHRM\\GreatHRM.Common\\GreatHRM.Common.csproj"
+              },
               "D:\\Projects\\GreatHRM\\GreatHRM.Repo\\GreatHRM.Repo.csproj": {
                 "projectPath": "D:\\Projects\\GreatHRM\\GreatHRM.Repo\\GreatHRM.Repo.csproj"
               }
@@ -107,6 +121,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x86",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

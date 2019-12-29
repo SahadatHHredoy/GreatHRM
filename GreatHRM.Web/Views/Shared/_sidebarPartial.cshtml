@@ -27,7 +27,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li>
-                <a href="pages/widgets.html">
+                <a href="@Url.Action("Index","Home")">
                     <i class="fa fa-th"></i> <span>Dashboard</span>
 
                 </a>
@@ -41,7 +41,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Add/Edit Machine</a></li>
+                    <li><a href="@Url.Action("Index","Machine")"><i class="fa fa-circle-o"></i>Machine</a></li>
                     <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Hardware Setup</a></li>
                 </ul>
             </li>
@@ -55,13 +55,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Company</a></li>
-                    <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Branch</a></li>
-                    <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Department</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Designation</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Office Time Policy</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Shifts</a></li>
-                    <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Employee</a></li>
+                    <li><a href="@Url.Action("Index","Company")"><i class="fa fa-circle-o"></i> Company</a></li>
+                    <li><a href="@Url.Action("Index","Branch")"><i class="fa fa-circle-o"></i> Branch</a></li>
+                    <li><a href="@Url.Action("Index","Department")"><i class="fa fa-circle-o"></i> Department</a></li>
+                    <li><a href="@Url.Action("Index","Designation")"><i class="fa fa-circle-o"></i> Designation</a></li>
+                    <li><a href="@Url.Action("Index","OfficeTimePolicy")"><i class="fa fa-circle-o"></i> Office Time Policy</a></li>
+                    <li><a href="@Url.Action("Index","Shifts")"><i class="fa fa-circle-o"></i> Shifts</a></li>
+                    <li><a href="@Url.Action("Index","Employee")"><i class="fa fa-circle-o"></i> Employee</a></li>
                     <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Leave Type</a></li>
                     <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Holiday</a></li>
                 </ul>
@@ -150,7 +150,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> User Manager</a></li>
+                    <li><a href="@Url.Action("Index","User")"><i class="fa fa-circle-o"></i> User Manager</a></li>
                     <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Change Password</a></li>
                     <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> SMS Settings</a></li>
                 </ul>
