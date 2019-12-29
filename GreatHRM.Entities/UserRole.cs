@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GreatHRM.Entities
 {
     [Table("UserRoles")]
-    public class UserRole : AuditableEntity
+    public class UserRole : Entity
     {
         [MaxLength(1000)]
         [Required]

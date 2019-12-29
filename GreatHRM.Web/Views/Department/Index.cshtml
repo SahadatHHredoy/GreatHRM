@@ -1,0 +1,40 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Department>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title"></h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Department")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().DepartmentName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().HeadEmail)</th>
+                      
+
+                    </tr>
+                    @foreach (var department in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => department.DepartmentName)</td>
+                            <td>@Html.DisplayFor(model => department.HeadEmail)</td>
+                        
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

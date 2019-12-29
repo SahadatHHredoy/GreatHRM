@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.138
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHRM.Web", "GreatHRM.Web\GreatHRM.Web.csproj", "{02EFD8A2-DBB1-46A3-AABD-638A8BB1BA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatHRM.Web", "GreatHRM.Web\GreatHRM.Web.csproj", "{02EFD8A2-DBB1-46A3-AABD-638A8BB1BA9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHRM.Common", "GreatHRM.Common\GreatHRM.Common.csproj", "{82169E7D-2698-4DAA-9EB8-248FA60227A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHRM.Entities", "GreatHRM.Entities\GreatHRM.Entities.csproj", "{9E14CAB5-E107-4FDD-8B72-5E88E5A903D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHRM.Repo", "GreatHRM.Repo\GreatHRM.Repo.csproj", "{D7B74B52-A8D9-4303-A591-97608557DC2E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatHRM.Services", "GreatHRM.Services\GreatHRM.Services.csproj", "{C59D79D1-26B4-41EB-AC7A-7D74F74265AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{D7B74B52-A8D9-4303-A591-97608557DC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7B74B52-A8D9-4303-A591-97608557DC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7B74B52-A8D9-4303-A591-97608557DC2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C59D79D1-26B4-41EB-AC7A-7D74F74265AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C59D79D1-26B4-41EB-AC7A-7D74F74265AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C59D79D1-26B4-41EB-AC7A-7D74F74265AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C59D79D1-26B4-41EB-AC7A-7D74F74265AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

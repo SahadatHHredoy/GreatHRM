@@ -1,0 +1,44 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.OfficeTimePolicy>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Office Time Policy List</h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","OfficeTimePolicy")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PolicyName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PermittedLateArrival)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PermitedEarlyDeparture)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().OvertimeAllow)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().NumberOfLate)</th>
+
+                    </tr>
+                    @foreach (var branch in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => branch.PolicyName)</td>
+                            <td>@Html.DisplayFor(model => branch.PermittedLateArrival)</td>
+                            <td>@Html.DisplayFor(model => branch.PermitedEarlyDeparture)</td>
+                            <td>@Html.DisplayFor(model => branch.OvertimeAllow)</td>
+                            <td>@Html.DisplayFor(model => branch.NumberOfLate)</td>
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,46 @@
+﻿@using GreatHRM.Entities
+@model IEnumerable<GreatHRM.Entities.Machine>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Machine List</h3>
+
+        <div class="box-tools">
+            <a class="btn btn-sm btn-success" href="@Url.Action("Add","Machine")"><i class="fa fa-plus"></i></a>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="form-horizontal">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().MachineNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().MachineName)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().SerialNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().BranchId)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().PortNo)</th>
+                        <th>@Html.DisplayNameFor(model => model.FirstOrDefault().AccessType)</th>
+
+                    </tr>
+                    @foreach (var machine in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => machine.MachineNo)</td>
+                            <td>@Html.DisplayFor(model => machine.MachineName)</td>
+                            <td>@Html.DisplayFor(model => machine.SerialNo)</td>
+                            <td>@Html.DisplayFor(model => machine.Branch.BranchName)</td>
+                            <td>@Html.DisplayFor(model => machine.PortNo)</td>
+                            <td>@Html.DisplayFor(model => machine.AccessType)</td>
+                        </tr>
+                    }
+                </thead>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

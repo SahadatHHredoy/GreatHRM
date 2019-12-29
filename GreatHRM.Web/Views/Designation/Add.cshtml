@@ -1,0 +1,48 @@
+﻿@using GreatHRM.Entities
+@model GreatHRM.Entities.Designation
+@using (Html.BeginForm("Add", "Designation", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Designation Add</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div class="row">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DesignationName, new { @class = "col-md-5 control-label" })
+                        <div class="col-md-7">
+                            @Html.TextBoxFor(model => model.DesignationName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DesignationName)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, new { @class = "col-md-5 control-label" })
+                        <div class="col-md-7">
+                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Description)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="@Url.Action("Index", "Company")" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-info pull-right">Save</button>
+        </div>
+    </div>
+}
+
+
+
+

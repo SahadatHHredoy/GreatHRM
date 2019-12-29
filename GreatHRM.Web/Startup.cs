@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using GreatHRM.Repo.Core;
+using System.Security.Policy;
 
 namespace GreatHRM.Web
 {
@@ -26,7 +28,22 @@ namespace GreatHRM.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<GreatHRMDbContext>();
+            services.AddDbContext<GreatHRMDbContext>(options=> {
+                options.UseSqlServer(Configuration.GetConnectionString("GreatHRMConnString"));
+               
+            });
+            services.AddScoped<IMachineRepository, MachineRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IBranchRepository, BranchRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IDesignationRepository, DesignationRepository>();
+            services.AddScoped<IOfficeTimeRepository, OfficeTimeRepository>();
+            services.AddScoped<IShiftRepository, ShiftRepository>();
+            services.AddScoped<ILogRepository, LogRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddWebSocketManager();
+            
            
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,19 +60,23 @@ namespace GreatHRM.Web
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-
-
             app.UseRouting();
            
             app.UseStaticFiles();
             app.UseAuthorization();
-
+            app.UseWebSockets();
+            var serviceScopeFactory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
+            var serviceProvider = serviceScopeFactory.CreateScope().ServiceProvider;
+            app.MapWebSocketManager("", serviceProvider.GetService<ChatMessageHandler>());
             app.UseEndpoints(endpoints =>
             {
+               
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+               
             });
+            
         }
     }
 }

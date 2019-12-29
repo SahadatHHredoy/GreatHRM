@@ -1,0 +1,5 @@
+D:\Projects\GreatHRM\GreatHRM.Common\bin\Release\GreatHRM.Common.dll
+D:\Projects\GreatHRM\GreatHRM.Common\bin\Release\GreatHRM.Common.pdb
+D:\Projects\GreatHRM\GreatHRM.Common\obj\Release\GreatHRM.Common.csprojAssemblyReference.cache
+D:\Projects\GreatHRM\GreatHRM.Common\obj\Release\GreatHRM.Common.dll
+D:\Projects\GreatHRM\GreatHRM.Common\obj\Release\GreatHRM.Common.pdb

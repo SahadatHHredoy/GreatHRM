@@ -18,7 +18,8 @@ namespace GreatHRM.Entities
         public int BranchId { get; set; }
         [ForeignKey("BranchId")]
         public virtual Branch Branch { get; set; }
-        public TimeZone TimeZone { get; set; }
+        public int? TimeZone { get; set; }
         public byte AccessType { get; set; }
+        
     }
 }

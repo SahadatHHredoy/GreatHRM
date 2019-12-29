@@ -17,11 +17,17 @@ namespace GreatHRM.Entities
         public TimeSpan EndTime { get; set; }
         public TimeSpan Duration { get; set; }
 
+        [Display(Name ="Begin")]
         public TimeSpan Break1Begin { get; set; }
+        [Display(Name = "End")]
         public TimeSpan Break1End { get; set; }
+        [Display(Name = "Duration")]
         public TimeSpan Break1Duration { get; set; }
+        [Display(Name = "Begin")]
         public TimeSpan Break2Begin { get; set; }
+        [Display(Name = "End")]
         public TimeSpan Break2End { get; set; }
+        [Display(Name = "Duration")]
         public TimeSpan Break2Duration { get; set; }
         public string ShiftDetail { get; set; }
 
